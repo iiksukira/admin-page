@@ -10,7 +10,7 @@ Sebuah sistem sederhana berbasis Node.js + Express.js (EJS) dengan database SQL 
 
 git clone
 ```bash
-(https://github.com/iiksukira/admin-page.git
+https://github.com/iiksukira/admin-page.git
 ```
 ```bash
 cd admin-page
