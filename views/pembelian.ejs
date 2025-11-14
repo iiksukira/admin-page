@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a> | <a href="/produk">Produk</a> |
+      <a href="/pembelian">Pembelian</a>
+    </nav>
+    <main>
+      <h2>Form Pembelian Produk</h2>
+      <form action="/pembelian" method="POST">
+        <label for="produk_id">Pilih Produk:</label>
+        <select name="produk_id" required>
+          <% produk.forEach(function(p) { %>
+          <option value="<%= p.id %>">
+            <%= `${p.nama} - Rp ${p.harga.toLocaleString()}` %>
+          </option>
+          <% }) %>
+        </select>
+        <label for="jumlah">Jumlah:</label>
+        <input type="number" name="jumlah" required min="1" />
+        <button type="submit">Beli</button>
+      </form>
+      <h2>Daftar Pembelian</h2>
+      <table border="1" cellpadding="8">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Produk</th>
+            <th>Jumlah</th>
+            <th>Tanggal</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pembelian.forEach(function(p) { %>
+          <tr>
+            <td><%= p.id %></td>
+            <td><%= p.nama %></td>
+            <td><%= p.jumlah %></td>
+            <td><%= new Date(p.tanggal).toLocaleDateString() %></td>
+            <td>
+              <form
+                action="/pembelian/<%= p.id %>?_method=DELETE"
+                method="POST"
+                style="display: inline"
+              >
+                <button type="submit">Hapus</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<%- include('layout') %>
+
+<h2>Daftar Produk dan Stok</h2>
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nama Produk</th>
+      <th>Harga</th>
+      <th>Stok Tersedia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% produk.forEach(p => { %>
+    <tr>
+      <td><%= p.id %></td>
+      <td><%= p.nama %></td>
+      <td>Rp <%= p.harga.toLocaleString() %></td>
+      <td><%= p.jumlah %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
