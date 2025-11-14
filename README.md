@@ -16,17 +16,15 @@ git clone
 cd admin-page
 ```
 
-1. Install dependencies:
+Jalankan server:
+```bash
+node app.js
+```
 
-2. Jalankan server:
-   ```bash
-   node app.js
-   ```
-
-3. Buka di browser:
-   ```bash
-   Server running on http://localhost:3000
-   ```
+Buka di browser:
+```bash
+Server running on http://localhost:3000
+```
 
 ## Struktur Database
 
