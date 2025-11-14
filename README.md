@@ -8,15 +8,20 @@ Sebuah sistem sederhana berbasis Node.js + Express.js (EJS) dengan database SQL 
 
 ## Cara Menjalankan
 
-git clone <repo-url>
+git clone
+``bash
+(https://github.com/iiksukira/admin-page.git
+``
+``bash
 cd admin-page
+``
 
 1. Install dependencies:
 
 2. Jalankan server:
-   `bash
+   ``bash
 node app.js
-`
+``
 
 3. Buka di browser:
 
@@ -25,12 +30,6 @@ node app.js
 - `produk`: daftar produk
 - `stok`: jumlah stok per produk
 - `pembelian`: histori pembelian
-
-## Fitur
-
-- Lihat produk dan stok
-- Input pembelian
-- Cancel pembelian (restore stok)
 
 ## Catatan
 
